@@ -327,9 +327,6 @@ class Result(object):
     To make accessing intrinsic parameters easier, set the psuedoattr_class;
     this will make the __slots__ of either the injection or the template
     attributes of this class. See set_psuedoattr_class for details. 
-
-    To see the arguments that are stored and what can be plotted,
-    run Result.plottable_arguments()
     """
     _psuedoattr_class = None
 

@@ -68,7 +68,7 @@ parser.add_option('-G', '--use-global-norm', action='store_true', default=False,
 parser.add_option('-p', '--additional-plots-cache', metavar='FILE1.cache[,FILE2.cache,...]', help='Load additional plots for each cube from the given cache file(s). To specify multiple cache files, comma separate each file name. All cache files must have used the same layer-configuration-file.')
 parser.add_option('-o', '--output-dir', help='Directory to save results to.')
 parser.add_option('-u', '--user-tag', default='', help='Add a user tag to all output files.')
-parser.add_option('', '--colormap', default='Greens_r', help='What color map to use for fractional gain plots. Default is Greens_r.')
+parser.add_option('', '--colormap', default='RdBu_r', help='What color map to use for fractional gain plots. Default is RdBu_r.')
 parser.add_option('', '--mingain', type='float', default=None, help='Minimum gain to color. Default is to use whatever the minium gain found is.')
 parser.add_option('', '--maxgain', type='float', default=None, help='Maximum gain to color. Default is to use whatever the maximum gain found is.')
 parser.add_option('', '--fontsize', type='int', default=8, help='Fontsize to use in volume plots. Default is 8.')
