@@ -457,15 +457,18 @@ get_td_waveform.__doc__ = get_td_waveform.__doc__.format(
 
 def get_dopshifted_waveform(**kwargs):
     """Return a doppler-shifted time domain gravitational waveform.
+
     Parameters
     ----------
     {params}
-    a: Angluar acceleration producing doppler shift in waveform.
+
+    a: Acceleration producing doppler shift in waveform. Units c per second
+
     vc: Velocity term for doppler conversion, must be <= 1.
     """
- 
+
     approx = kwargs["approximant"].replace("doppler", "")
-    
+
     hp, hc = get_td_waveform(**dict(kwargs, approximant=approx))
     a = kwargs["a"]
     vc = kwargs["vc"]

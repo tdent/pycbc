@@ -579,3 +579,7 @@ def select_waveform_generator(approximant):
 
     else:
         raise ValueError("%s is not a valid approximant." % approximant)
+
+    # check if doppler-shifted waveform
+    elif approximant.startswith("doppler")
+    	return DopplerTDomain
