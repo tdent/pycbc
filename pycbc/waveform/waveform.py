@@ -466,7 +466,7 @@ def get_dopshifted_waveform(template=None, **kwargs):
 
     vc: Velocity term for doppler conversion, must be <= 1.
     """
- 
+
     kwargs = props(template, **kwargs)
     kwargs["approximant"] = kwargs["approximant"].replace("doppler", "")
     hp, hc = get_td_waveform(**kwargs)
@@ -479,7 +479,7 @@ def get_dopshifted_waveform(template=None, **kwargs):
     t_shifted = t * (1. + v)
     amp = wfutils.amplitude_from_polarizations(hp, hc)
     p = wfutils.phase_from_polarizations(hp, hc, remove_start_phase=False)
-    
+
     f1 = interpolate.interp1d(x=t_shifted, y=amp.numpy(), bounds_error=False, fill_value=0.)
     f2 = interpolate.interp1d(x=t_shifted, y=p.numpy(), bounds_error=False, fill_value=0.)
     tsamples = numpy.arange(t_shifted[0], t_shifted[-1], hp.delta_t)
@@ -487,7 +487,7 @@ def get_dopshifted_waveform(template=None, **kwargs):
     ps = f2(tsamples)
     hp =  TimeSeries((amps * numpy.cos(ps)), delta_t=hp.delta_t, epoch=tsamples[0])
     hc =  TimeSeries((amps * numpy.sin(ps)), delta_t=hp.delta_t, epoch=tsamples[0])
-    return hp, hc 
+    return hp, hc
 
 def get_fd_waveform(template=None, **kwargs):
     """Return a frequency domain gravitational waveform.

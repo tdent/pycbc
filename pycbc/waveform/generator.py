@@ -292,7 +292,7 @@ class DopplerTDomain(TDomainCBCGenerator):
 class FDomainMassSpinRingdownGenerator(BaseGenerator):
     """Uses ringdown.get_fd_from_final_mass_spin as a generator function to
     create frequency-domain ringdown waveforms with higher modes in the
-    radiation frame; i.e., with no detector response function applied. 
+    radiation frame; i.e., with no detector response function applied.
     For more details, see BaseGenerator.
 
     Examples
@@ -317,7 +317,7 @@ class FDomainMassSpinRingdownGenerator(BaseGenerator):
             variable_args=variable_args, **frozen_params)
 
 class FDomainFreqTauRingdownGenerator(BaseGenerator):
-    """Uses ringdown.get_fd_from_freqtau as a generator function to 
+    """Uses ringdown.get_fd_from_freqtau as a generator function to
     create frequency-domain ringdown waveforms with higher modes in the
     radiation frame; i.e., with no detector response function applied.
     For more details, see BaseGenerator.
@@ -572,7 +572,7 @@ def select_waveform_generator(approximant):
     # otherwise waveform approximant is not supported
     elif approximant in ringdown.ringdown_td_approximants:
         raise ValueError("Time domain ringdowns not supported")
-    
+
     # check if doppler-shifted waveform
     elif approximant.startswith("doppler"):
     	return DopplerTDomain
